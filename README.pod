@@ -1,0 +1,45 @@
+=head1 NAME
+
+Mojolicious::Plugin::RenderFile - Mojolicious Plugin
+
+=head1 SYNOPSIS
+
+    # Mojolicious
+    $self->plugin('RenderFile');
+
+    # Mojolicious::Lite
+    plugin 'RenderFile';
+    
+    # In controller
+    $self->render_file(filepath => '/tmp/files/file.pdf'); # file name will "file.pdf"
+     
+    # Provide any file name
+    $self->render_file(filepath => '/tmp/files/file.pdf',  'filename' => 'report.pdf');
+
+=head1 DESCRIPTION
+
+L<Mojolicious::Plugin::RenderFile> is a L<Mojolicious> plugin that adds "render_file" helper. It does not read file in memory and just streaming it to client. 
+
+=head1 HELPERS
+
+=head2 C<render_file>
+
+    $self->render_file(filepath => '/tmp/files/file.pdf',  'filename' => 'report.pdf');
+
+With this helper you can easly provide files for download. By default content-type is "application/x-download". Therefore, a browser will ask where to save file.
+
+Register plugin in L<Mojolicious> application.
+
+=head1 AUTHOR
+
+Viktor Turskyi <koorchik@cpan.org>
+
+=head1 BUGS
+
+Please report any bugs or feature requests to Github L<https://github.com/koorchik/Mojolicious-Plugin-RenderFile>
+
+=head1 SEE ALSO
+
+L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>.
+
+=cut
